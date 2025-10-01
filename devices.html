@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Smart Building Toolkit</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://example.com/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./index.js" defer></script>
+
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+
+</head>
+
+<body class="n0-light-grey">
+
+    <div id="smartBldgDesign">
+
+        <!-- Top container -->
+        <div class="n0-bar n0-top n0-indigo n0-large" style="z-index:4">
+            <button class="n0-bar-item n0-button n0-hide-large n0-hover-none n0-hover-text-light-grey" @click="toggleSidebar"><i class="fa fa-bars"></i>  Menu</button>
+            <span class="n0-bar-item n0-right"><b>Attain Energy IO - Smart Building Devices</b></span>
+        </div>
+
+        <!-- Sidebar/menu -->
+        <nav v-show="sidebarVisible" class="n0-sidebar n0-collapse n0-white n0-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+            <div class="n0-container n0-row">
+                <div class="n0-col s4">
+                    <!--<img src="/w3images/avatar2.png" class="n0-circle n0-margin-right" style="width:46px">-->
+                </div>
+                <div class="n0-col s8 n0-bar">
+                    <span>Welcome <strong>Attain Partner</strong></span><br>
+                    <a href="#" class="n0-bar-item n0-button"><i class="fa fa-envelope"></i></a>
+                    <a href="#" class="n0-bar-item n0-button"><i class="fa fa-user"></i></a>
+                    <a href="#" class="n0-bar-item n0-button"><i class="fa fa-cog"></i></a>
+                </div>
+            </div>
+            <hr>
+            <div class="n0-container">
+                <h5>Menu</h5>
+            </div>
+            <div class="n0-bar-block">
+                <a href="#" class="n0-bar-item n0-button n0-padding-16 n0-hide-large n0-dark-grey n0-hover-black" @click="closeSidebar" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+                <a href="./index" class="n0-bar-item n0-button n0-padding"><i class="fa fa-home"></i>  Home</a>
+            </div>
+        </nav>
+
+        <!-- Overlay effect when opening sidebar on small screens -->
+        <div v-show="sidebarVisible" class="n0-overlay n0-hide-large n0-animate-opacity" @click="closeSidebar" style="cursor:pointer"
+            title="close side menu" id="myOverlay"></div>
+
+        <!-- !PAGE CONTENT! -->
+        <div class="n0-main" style="margin-left:300px;margin-top:43px;">
+
+            <!-- Header -->
+            <header class="n0-container">
+                <h3><b>Device Documentation</b></h3>
+            </header>
+
+            <div class="n0-container n0-padding-16 n0-teal">
+                <h3>Equipment Selection</h3>
+                <hr>
+                <div class="n0-row-padding-small">
+                    <div class="n0-half">
+                        <select v-model="selectA" v-on:change="setSystem()" class="n0-select" name="option">
+                        <option value="" disabled selected>Select System</option>
+                        <option v-for="item in listA">{{ item }}</option>
+                        </select>
+                    </div>
+                    <div class="n0-half">
+                        <select v-model="selectB" v-on:change="setItem()" class="n0-select" name="option">
+                        <option value="" disabled selected>Select Item</option>
+                        <option v-for="item in listB">{{ item }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="n0-container n0-padding-16 n0-teal">
+                <p>Device naming schema : {{ equipmentReference }}</p>
+                <p>Timeseries (Data updated frequently i.e. every 15 minutes) - Endpoint : {{ endPointStringDT }}</p>
+                <p>Semi-Static (Data updated infrequently or not at all) - Endpoint : {{ endPointStringDA }}</p>
+            </div>
+
+            <hr>
+
+<div class="n0-container n0-dark-grey n0-padding">
+    <h3>Configuration Detail</h3>
+        <div class="n0-row-padding-small">
+            <div class="n0-half">
+                <p>Device Timeseries Endpoints - {{ Object.keys(deviceDataT).length }}</p>
+                <pre class="n0-code n0-small" v-html="syntaxHighlight(deviceDataT)"></pre>
+            </div>
+            <div class="n0-half">
+                <p>Device Semi-Static Endpoints - {{ Object.keys(deviceDataA).length }}</p>
+                <pre class="n0-code n0-small" v-html="syntaxHighlight(deviceDataA)"></pre>
+            </div>
+        </div>
+</div>
+
+    <!-- End page content -->
+    </div>
+
+</body>
+
+</html>
