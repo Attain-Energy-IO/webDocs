@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attain Energy IO – Enhancement Dashboard</title>
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./index.js" defer></script>
+  <style>
+    body { font-family: 'Raleway', sans-serif; margin:0; background:#fafafa; }
+    .topbar { background:#3f51b5; color:white; padding:12px 24px; position:fixed; top:0; left:0; right:0; z-index:10; }
+    .sidebar { width:260px; background:white; position:fixed; top:0; bottom:0; padding:70px 10px 10px 10px; overflow-y:auto; border-right:1px solid #ddd; }
+    .content { margin-left:280px; padding:80px 40px; }
+    h1,h2,h3 { color:#3f51b5; }
+    ul { margin-left:1.5em; }
+    .image-placeholder { border:1px dashed #aaa; padding:40px; text-align:center; color:#666; margin:12px 0; }
+    a.navlink { display:block; padding:8px 16px; color:#333; text-decoration:none; border-radius:6px; margin-bottom:4px; }
+    a.navlink:hover { background:#f0f0f0; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="topbar"><strong>Attain Energy IO – User Guide</strong></div>
+    <div class="sidebar">
+      <h4>Guide Contents</h4>
+      <a class="navlink" href="./introduction.html">Introduction</a>
+      <a class="navlink" href="./userRoles.html">User Roles</a>
+      <a class="navlink" href="./dashboardGroups.html">Dashboard Groups</a>
+      <a class="navlink" href="./navigation.html">Navigation</a>
+      <hr>
+      <a class="navlink" href="./performance.html">Performance</a>
+      <a class="navlink" href="./services.html">Services</a>
+      <a class="navlink" href="./hvac.html">HVAC</a>
+      <a class="navlink" href="./comfort.html">Comfort</a>
+      <a class="navlink" href="./enhancement.html">Enhancement</a>
+      <a class="navlink" href="./faults.html">Faults</a>
+      <a class="navlink" href="./health.html">Health</a>
+      <a class="navlink" href="./mepSystems.html">MEP Systems</a>
+      <a class="navlink" href="./commissioning.html">Commissioning</a>
+      <a class="navlink" href="./reporting.html">Reporting</a>
+    </div>
+
+    <main class="content">
+      <h2>Dashboard Group 5 – Enhancement</h2>
+
+      <h3>Overview</h3>
+      <p>The Enhancement dashboard group presents information on intelligent system automation driven by the Attain Active Trim engine. The overview page contains a top chart with 1-month tracking of Active Trim commands and a lower table with Active Trim settings for each tenant or area:</p>
+      <div class="image-placeholder">[Image: Active Trim Overview – Commands & Settings]</div>
+
+      <h3>Command List</h3>
+      <p>Clicking on the active trim commands chart drills down to a list of most recent equipment commands for the current day:</p>
+      <div class="image-placeholder">[Image: Active Trim Command List]</div>
+    </main>
+  </div>
+</body>
+</html>
