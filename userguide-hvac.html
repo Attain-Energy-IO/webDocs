@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attain Energy IO – HVAC Dashboard</title>
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./index.js" defer></script>
+  <style>
+    body { font-family: 'Raleway', sans-serif; margin:0; background:#fafafa; }
+    .topbar { background:#3f51b5; color:white; padding:12px 24px; position:fixed; top:0; left:0; right:0; z-index:10; }
+    .sidebar { width:260px; background:white; position:fixed; top:0; bottom:0; padding:70px 10px 10px 10px; overflow-y:auto; border-right:1px solid #ddd; }
+    .content { margin-left:280px; padding:80px 40px; }
+    h1,h2,h3 { color:#3f51b5; }
+    ul { margin-left:1.5em; }
+    .image-placeholder { border:1px dashed #aaa; padding:40px; text-align:center; color:#666; margin:12px 0; }
+    a.navlink { display:block; padding:8px 16px; color:#333; text-decoration:none; border-radius:6px; margin-bottom:4px; }
+    a.navlink:hover { background:#f0f0f0; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="topbar"><strong>Attain Energy IO – User Guide</strong></div>
+    <div class="sidebar">
+      <h4>Guide Contents</h4>
+      <a class="navlink" href="./introduction.html">Introduction</a>
+      <a class="navlink" href="./userRoles.html">User Roles</a>
+      <a class="navlink" href="./dashboardGroups.html">Dashboard Groups</a>
+      <a class="navlink" href="./navigation.html">Navigation</a>
+      <hr>
+      <a class="navlink" href="./performance.html">Performance</a>
+      <a class="navlink" href="./services.html">Services</a>
+      <a class="navlink" href="./hvac.html">HVAC</a>
+      <a class="navlink" href="./comfort.html">Comfort</a>
+      <a class="navlink" href="./enhancement.html">Enhancement</a>
+      <a class="navlink" href="./faults.html">Faults</a>
+      <a class="navlink" href="./health.html">Health</a>
+      <a class="navlink" href="./mepSystems.html">MEP Systems</a>
+      <a class="navlink" href="./commissioning.html">Commissioning</a>
+      <a class="navlink" href="./reporting.html">Reporting</a>
+    </div>
+
+    <main class="content">
+      <h2>Dashboard Group 3 – HVAC</h2>
+
+      <h3>Overview</h3>
+      <p>The HVAC dashboard group presents information relating to HVAC services, including:</p>
+      <ul>
+        <li>Space Heating</li>
+        <li>Space Cooling</li>
+        <li>Packaged AC</li>
+        <li>Critical Cooling</li>
+        <li>Domestic Hot/Cold Water</li>
+        <li>Ventilation</li>
+      </ul>
+      <div class="image-placeholder">[Image: HVAC Overview – Live Output & 7 Days Performance]</div>
+
+      <p>The HVAC overview page includes:</p>
+      <ul>
+        <li>Top horizontal cards with active device counts</li>
+        <li>Building thermal performance chart with 7-day actual heating & cooling outputs vs estimated seasonal demand</li>
+        <li>Live and average weather demand comparison</li>
+      </ul>
+
+      <h3>Tenants</h3>
+      <p>Clicking 'Tenants' navigates to a list of building tenants or areas, showing live HVAC status. Selecting a tenant shows its equipment list, and clicking an equipment item shows its 30-day performance profile:</p>
+      <div class="image-placeholder">[Image: Tenant HVAC Status & Equipment List]</div>
+
+      <h3>Tenant HVAC Equipment Performance</h3>
+      <ul>
+        <li>Temperature line should follow seasonal expectations (above setpoint in summer, below in winter)</li>
+        <li>Heating/cooling outputs should not overlap</li>
+        <li>Minimal heating in summer, minimal cooling in winter</li>
+        <li>Enable indicator should align with zone time schedule</li>
+      </ul>
+
+      <h3>Landlord</h3>
+      <p>Clicking 'Landlord' navigates to a tabulated list of system equipment and main system charts, with additional buttons for further navigation if required:</p>
+      <div class="image-placeholder">[Image: Landlord HVAC System Overview]</div>
+    </main>
+  </div>
+</body>
+</html>
