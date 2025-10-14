@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attain Energy IO – Comfort Dashboard</title>
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./index.js" defer></script>
+  <style>
+    body { font-family: 'Raleway', sans-serif; margin:0; background:#fafafa; }
+    .topbar { background:#3f51b5; color:white; padding:12px 24px; position:fixed; top:0; left:0; right:0; z-index:10; }
+    .sidebar { width:260px; background:white; position:fixed; top:0; bottom:0; padding:70px 10px 10px 10px; overflow-y:auto; border-right:1px solid #ddd; }
+    .content { margin-left:280px; padding:80px 40px; }
+    h1,h2,h3 { color:#3f51b5; }
+    ul { margin-left:1.5em; }
+    .image-placeholder { border:1px dashed #aaa; padding:40px; text-align:center; color:#666; margin:12px 0; }
+    a.navlink { display:block; padding:8px 16px; color:#333; text-decoration:none; border-radius:6px; margin-bottom:4px; }
+    a.navlink:hover { background:#f0f0f0; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="topbar"><strong>Attain Energy IO – User Guide</strong></div>
+    <div class="sidebar">
+      <h4>Guide Contents</h4>
+      <a class="navlink" href="./introduction.html">Introduction</a>
+      <a class="navlink" href="./userRoles.html">User Roles</a>
+      <a class="navlink" href="./dashboardGroups.html">Dashboard Groups</a>
+      <a class="navlink" href="./navigation.html">Navigation</a>
+      <hr>
+      <a class="navlink" href="./performance.html">Performance</a>
+      <a class="navlink" href="./services.html">Services</a>
+      <a class="navlink" href="./hvac.html">HVAC</a>
+      <a class="navlink" href="./comfort.html">Comfort</a>
+      <a class="navlink" href="./enhancement.html">Enhancement</a>
+      <a class="navlink" href="./faults.html">Faults</a>
+      <a class="navlink" href="./health.html">Health</a>
+      <a class="navlink" href="./mepSystems.html">MEP Systems</a>
+      <a class="navlink" href="./commissioning.html">Commissioning</a>
+      <a class="navlink" href="./reporting.html">Reporting</a>
+    </div>
+
+    <main class="content">
+      <h2>Dashboard Group 4 – Comfort</h2>
+
+      <h3>Overview</h3>
+      <p>This group presents workspace comfort information for the building. The overview page contains 7-day charts of overall building comfort and workspace app adjustment counts:</p>
+      <div class="image-placeholder">[Image: Building Comfort Overview – 7-Day Charts]</div>
+      <p>Comfort is calculated as the aggregate level from temperature control equipment and environmental sensor data.</p>
+
+      <h3>Tenants / Areas</h3>
+      <p>Clicking on the building comfort chart drills down to a tabulated list of tenants or areas. Live comfort status is shown for each, and selecting a row shows comfort-related data for that tenant/area:</p>
+      <div class="image-placeholder">[Image: Tenant/Area Comfort Table]</div>
+
+      <h3>Environmental Multi-Sensors</h3>
+      <p>Top table widget lists multi-sensor units. Selecting a sensor shows 7-day charts of main environmental factor data:</p>
+      <div class="image-placeholder">[Image: Multi-Sensor 7-Day Data Charts]</div>
+
+      <h3>Workspace App Adjustment</h3>
+      <p>Clicking on the workspace app user inputs chart navigates to a page showing 7-day adjustment tracking for available zone adjustments (temperature, ventilation, etc.). These adjustments integrate with the Attain Active Trim energy management system to improve controllability without compromising energy performance:</p>
+      <div class="image-placeholder">[Image: Workspace App Adjustment Tracking]</div>
+    </main>
+  </div>
+</body>
+</html>
