@@ -38,6 +38,8 @@ const app = Vue.createApp({
             endPointStringAA: "select from list",
             endPointStringDT: "select from list",
             endPointStringDA: "select from list",
+            endPointStringDTK: "",
+            endPointStringDAK: "",
             assetEndpointListA: [],
             selectedEndpointT: "",
             selectedEndpointA: "",
