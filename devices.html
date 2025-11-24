@@ -103,14 +103,14 @@
     <h3>Configuration Detail</h3>
         <div class="n0-row-padding-small">
             <div class="n0-half">
-                <p>Device Timeseries Endpoints - {{ Object.keys(deviceDataT).length }}</p>
-                <pre class="n0-code n0-small" v-html="syntaxHighlight(deviceDataT)"></pre>
+                <!--p>Device Timeseries Endpoints - {{ Object.keys(deviceDataT).length }}</p-->
                 <p>Get Timeseries Keys - `https://<host>/api/plugins/telemetry/DEVICE/<deviceID>/keys/timeseries`</p>
+                <pre class="n0-code n0-small" v-html="syntaxHighlight(deviceDataT)"></pre>
             </div>
             <div class="n0-half">
-                <p>Device Semi-Static Endpoints - {{ Object.keys(deviceDataA).length }}</p>
-                <pre class="n0-code n0-small" v-html="syntaxHighlight(deviceDataA)"></pre>
+                <!--p>Device Semi-Static Endpoints - {{ Object.keys(deviceDataA).length }}</p-->
                 <p>Get Semi-Static Keys - 'https://<host>/api/plugins/telemetry/DEVICE/<deviceID>/keys/attributes'</p>
+                <pre class="n0-code n0-small" v-html="syntaxHighlight(deviceDataA)"></pre>
             </div>
         </div>
 </div>
