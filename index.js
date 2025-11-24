@@ -229,22 +229,22 @@ const app = Vue.createApp({
                 if (res.ok) {  
                     return res.json().then(data => {
                         console.log(data);
-                        this.deviceDataT = data.telemetry || {"config": "not defined"};
-                        this.deviceDataA = data.attributes || {"config": "not defined"};
+                        this.deviceDataT = data.telemetry || {"Timeseries Config": "Docs Not Yet Updated, Contact Attain Team"};
+                        this.deviceDataA = data.attributes || {"Attributes Config": "Docs Not Yet Updated, Contact Attain Team"};
                     }).catch(jsonError => {
                         console.error("JSON parsing error:", jsonError);
-                        this.deviceDataT = {"config": "not yet defined, contact Attain"};
-                        this.deviceDataA = {"config": "not yet defined, contact Attain"};
+                        this.deviceDataT = {"Timeseries Config": "Docs Not Yet Updated, Contact Attain Team"};
+                        this.deviceDataA = {"Attributes Config": "Docs Not Yet Updated, Contact Attain Team"};
                     });
                 } else {
                     console.warn("Server responded with status:", res.status);
-                    this.deviceDataT = {"config": "not yet defined, contact Attain"};
-                    this.deviceDataA = {"config": "not yet defined, contact Attain"};
+                    this.deviceDataT = {"Timeseries Config": "Docs Not Yet Updated, Contact Attain Team"};
+                    this.deviceDataA = {"Attributes Config": "Docs Not Yet Updated, Contact Attain Team"};
                 }
             }).catch(error => {
                 console.error("Fetch error:", error);
-                this.deviceDataT = {"config": "not yet defined, contact Attain"};
-                this.deviceDataA = {"config": "not yet defined, contact Attain"};
+                this.deviceDataT = {"Timeseries Config": "Docs Not Yet Updated, Contact Attain Team"};
+                this.deviceDataA = {"Attributes Config": "Docs Not Yet Updated, Contact Attain Team"};
             });
 
             this.getAssetName();
