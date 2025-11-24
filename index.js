@@ -194,6 +194,7 @@ const app = Vue.createApp({
         },
     
         setSystem() {
+            this.deviceDataT = "";
             const x = this.selectA;
             this.listB = [];
             this.equipmentReference = "";
