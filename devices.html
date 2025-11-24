@@ -93,13 +93,17 @@
             </div>
             <div class="n0-container n0-padding-16 n0-teal">
                 <p>Device naming schema : {{ equipmentReference }}</p>
-                <p>Timeseries (Data updated frequently i.e. every 15 minutes) - Endpoint : {{ endPointStringDT }}</p>
-                <p>Semi-Static (Data updated infrequently or not at all) - Endpoint : {{ endPointStringDA }}</p>
+                <hr>
+                <p>Timeseries Keys - Endpoint : {{ endPointStringDTK }}</p>
+                <p>Semi-Static Keys - Endpoint : {{ endPointStringDAK }}</p>
+                <hr>
+                <p>Timeseries Point Data (Data updated frequently i.e. every 15 minutes) - Endpoint : {{ endPointStringDT }}</p>
+                <p>Semi-Static Point Data (Data updated infrequently or not at all) - Endpoint : {{ endPointStringDA }}</p>
             </div>
 
             <hr>
 
-<div class="n0-container n0-dark-grey n0-padding">
+<!--div class="n0-container n0-dark-grey n0-padding">
     <h3>Configuration Detail</h3>
         <div class="n0-row-padding-small">
             <div class="n0-half">
@@ -113,7 +117,7 @@
                 <pre class="n0-code n0-small" v-html="syntaxHighlight(deviceDataA)"></pre>
             </div>
         </div>
-</div>
+</div-->
 
     <!-- End page content -->
     </div>
