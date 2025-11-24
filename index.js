@@ -212,8 +212,6 @@ const app = Vue.createApp({
         },
 
         setItem() {
-            //this.endPointStringDT = 'https://<host>/api/plugins/telemetry/DEVICE/<deviceID>/values/timeseries?keys=<comma separated list>&startTs=<range start UTC Timestamp milliseconds>&endTs=<range stop UTC Timestamp milliseconds> (Not including startTs and endTs results in last telemetry value being returned)';
-            //this.endPointStringDA = 'https://<host>/api/plugins/telemetry/DEVICE/<deviceID>/values/attributes?keys=<comma separated list>';
             const x = this.selectB;
             const y = this.dataObject;
             for (let i = 0; i < y[0].length; i++) {
@@ -226,27 +224,12 @@ const app = Vue.createApp({
             console.log(z);
             const url = `https://red.attain-energy.io/getDeviceConfig?item=${z}`;
             fetch(url).then(res => {
-                if (res.ok) {  
-                    return res.json().then(data => {
+                if (res.status === 200) {
+                    res.json().then(data => {
                         console.log(data);
-                        this.deviceDataT = data.telemetry || {"Timeseries Config": "Docs Not Yet Updated, Contact Attain Team"};
-                        this.deviceDataA = data.attributes || {"Attributes Config": "Docs Not Yet Updated, Contact Attain Team"};
-                    }).catch(jsonError => {
-                        console.error("JSON parsing error:", jsonError);
-                        this.deviceDataT = {"Timeseries Config": "Docs Not Yet Updated, Contact Attain Team"};
-                        this.deviceDataA = {"Attributes Config": "Docs Not Yet Updated, Contact Attain Team"};
+                        this.deviceDataT = data
                     });
-                } else {
-                    console.warn("Server responded with status:", res.status);
-                    this.deviceDataT = {"Timeseries Config": "Docs Not Yet Updated, Contact Attain Team"};
-                    this.deviceDataA = {"Attributes Config": "Docs Not Yet Updated, Contact Attain Team"};
                 }
-            }).catch(error => {
-                console.error("Fetch error:", error);
-                this.deviceDataT = {"Timeseries Config": "Docs Not Yet Updated, Contact Attain Team"};
-                this.deviceDataA = {"Attributes Config": "Docs Not Yet Updated, Contact Attain Team"};
-            });
-
             this.getAssetName();
         },
 
