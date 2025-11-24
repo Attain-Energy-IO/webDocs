@@ -230,6 +230,7 @@ const app = Vue.createApp({
                         this.deviceDataT = data
                     });
                 }
+            });
             this.getAssetName();
         },
 
