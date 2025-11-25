@@ -31,8 +31,9 @@ const app = Vue.createApp({
             assetReference: "",
             deviceDataT: "",
             deviceDataA: "",
-            pointsListA: [],
-            pointsListB: [],
+            pointsListA: [], // LIST OF ALL TELEMETRY NAMES
+            pointsListB: [], // POINTS LIST PER DEVICE TYPE
+            pointsListC: [], // DEVICE SEMI STATIC ATTRIBUTES
             selectP: "",
             endPointStringAT: "https://<host>/api/plugins/telemetry/ASSET/<assetID>/values/timeseries?keys=<comma separated list>&startTs=<range start UTC Timestamp milliseconds>&endTs=<range stop UTC Timestamp milliseconds> (Not including startTs and endTs results in last telemetry value being returned)",
             endPointStringAA: "https://<host>/api/plugins/telemetry/ASSET/<assetID>/values/attributes?keys=<comma separated list>",
@@ -106,6 +107,7 @@ const app = Vue.createApp({
                         console.log(data);
                         this.pointsListA = data.a;
                         this.pointsListB = data.b;
+                        this.pointsListC = data.c;
                     });
                 }
             });
