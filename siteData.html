@@ -73,16 +73,10 @@
                 <hr>
                 <div class="n0-row-padding-small">
                     <div class="n0-half">
-                        <select v-model="selectA" v-on:change="setSystem()" class="n0-select" name="option">
-                        <option value="" disabled selected>Select System</option>
-                        <option v-for="item in listA">{{ item }}</option>
-                        </select>
+                        <input class="n0-text" name="option">
                     </div>
                     <div class="n0-half">
-                        <select v-model="selectB" v-on:change="setItem()" class="n0-select" name="option">
-                        <option value="" disabled selected>Select Item</option>
-                        <option v-for="item in listB">{{ item }}</option>
-                        </select>
+                        <input class="n0-text" name="option">
                     </div>
                 </div>
             </div>
