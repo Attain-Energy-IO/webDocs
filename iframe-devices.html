@@ -39,14 +39,14 @@
                 <h3>MEP devices - Naming schema checker</h3>
                 <hr>
                 <div class="n0-row-padding-small">
-                    <div class="n0-half">
+                    <div class="n0-half n0-padding">
                         <select v-model="selectA" v-on:change="setSystem()" class="n0-select" name="option">
                         <option value="" disabled selected>Select System</option>
                         <option v-for="item in listA">{{ item }}</option>
                         </select>
                     </div>
-                    <br>
-                    <div class="n0-half">
+
+                    <div class="n0-half n0-padding">
                         <select v-model="selectB" v-on:change="setItem()" class="n0-select" name="option">
                         <option value="" disabled selected>Select Item</option>
                         <option v-for="item in listB">{{ item }}</option>
