@@ -53,6 +53,18 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             <li>When aggregating data from multiple buildings to a specific entity, use the site name, format (see below) : CUSTOMER NAME-SITE NAME</li>
           </ol>
         </div>
+
+        <div class="n0-container">
+          <ul class="n0-ul n0-border">
+            <li><h4>Customer Navigation</h4></li>
+            <li>Projects are mapped to <strong>Customers</strong> within the side nav. Each project has its site name and a PROJECT_NNNN suffix. From there you can manage users, assets, devices and dashboards </li>
+            <li>2. Fetch site details. Each site is represented as PROJECT_ABCD, where ABCD is a unique project reference : https://&lt;host&gt;/api/customers?pageSize=100&page=0 , Site name can be found under : payload.data[index].additionalInfo.description, Save the project ID for the project you wish to access</li>
+            <li>3. Fetch project devices (MEP devices) detail : https://&lt;host&gt;/api/customer/&lt;project ID&gt;/devices?pageSize=500&page=0 , Save the device ID for the device(s) you wish to access</li>
+            <li>4. Fetch project assets (building/floors) detail : https://&lt;host&gt;/api/customer/&lt;project ID&gt;/assets?pageSize=50&page=0 , Save the asset ID for the asset(s) you wish to access</li>
+            <li>5. Use 'Devices Data' or 'Asset Data' guides to access device or asset data for the selected project</li>
+          </ul>
+        </div>
+            
         <div class="n0-container">
           <ul class="n0-ul n0-border">
             <li><h4>Entities Navigation</h4></li>
