@@ -39,12 +39,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <div class="n0-main" style="margin-left:300px;">
 
         <div class="n0-container">
-          <h5>Welcome to the Attain Web Interface (AWI), an easy to use REST API enabling seamless integration with your Attain platform</h5>
-          <p>Note : For white label customers / tenant administrators only. Replace <...> with your project specfic information</p>
+          <h5>This page acts as a quick reference user guide for the Attain platform</h5>
+          <h6>Reach out to the team for clarification or support</h6>
         </div>
         <div class="n0-container">
           <ul class="n0-ol n0-border">
-            <h4>Notes</h4>
+            <li><h4>Customers Navigation</h4></li>
             <li>Project entities are split into two core categories: 1.Devices and 2.Assets. Devices include all MEP equipment. Assets include buildings and each floor or main demise within each building</li>
             <li>Each project entity has two data types: 1.Static/semi-static and 2.Timeseries. Follow guidance below, and accompanying pages to access entities data</li>
             <li>Static/semi-static data are data points that dont change or change infrequently. This could be a design parameter or a parameter that gets logged once per month</li>
@@ -55,7 +55,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         </div>
         <div class="n0-container">
           <ul class="n0-ul n0-border">
-            <li><h4>Data Access Guide</h4></li>
+            <li><h4>Entities Navigation</h4></li>
             <li>1. Authenticate your user and obtain access token here : https://&lt;host&gt;/api/auth/login , and periodically refresh the token here : https://&lt;host&gt;/api/auth/token , All subsequent requests will require Bearer token in request header</li>
             <li>2. Fetch site details. Each site is represented as PROJECT_ABCD, where ABCD is a unique project reference : https://&lt;host&gt;/api/customers?pageSize=100&page=0 , Site name can be found under : payload.data[index].additionalInfo.description, Save the project ID for the project you wish to access</li>
             <li>3. Fetch project devices (MEP devices) detail : https://&lt;host&gt;/api/customer/&lt;project ID&gt;/devices?pageSize=500&page=0 , Save the device ID for the device(s) you wish to access</li>
