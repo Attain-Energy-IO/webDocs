@@ -41,10 +41,10 @@
                   <h5>Management API</h5>
                       <ol class="n0-ol n0-border n0-padding-16">
                         <p>API Access</p>
-                        <li>Project entities are split into two core categories: 1.Devices and 2.Assets. Devices include all MEP equipment. Assets include buildings and each floor or main demise within each building</li>
-                        <li>Each project entity has two data types: 1.Static/semi-static <strong>ATTRIBUTES</strong> and 2.Timeseries <strong>TELEMETRY</strong>. Entities are mapped to <strong>Entities</strong> in the navigation menu</li>
-                        <li>Static/semi-static data are data points that dont change or change infrequently. This could be a design parameter or a parameter that gets logged once per month</li>
-                        <li>Timeseries data are data points that change frequently and are recorded at fixed time intervals, typically every 15 mintes. An example would be electrical power from a power meter</li>
+                        <li>Authenticate your user and obtain access token here : https://<host>/api/auth/login , and periodically refresh the token here : https://<host>/api/auth/token , All subsequent requests will require Bearer token in request header</li>
+                        <li>Fetch site details. Each site is represented as PROJECT_ABCD, where ABCD is a unique project reference : https://<host>/api/customers?pageSize=100&page=0 , Site name can be found under : payload.data[index].additionalInfo.description, Save the project ID for the project you wish to access</li>
+                        <li>Fetch project devices (MEP devices) detail : https://<host>/api/customer/<project ID>/devices?pageSize=500&page=0 , Save the device ID for the device(s) you wish to access</li>
+                        <li>Fetch project assets (building/floors) detail : https://<host>/api/customer/<project ID>/assets?pageSize=50&page=0 , Save the asset ID for the asset(s) you wish to access</li>
                       </ol>
                 <hr>
                 <a href="./iframe-index.html" class="n0-button n0-black n0-round-large n0-hover-indigo">
