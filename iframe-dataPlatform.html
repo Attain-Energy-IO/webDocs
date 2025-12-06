@@ -45,6 +45,10 @@
                         <li>Fetch project details. Each site is represented as SITE_NAME PROJECT_ABCD, where ABCD is a unique project reference : https://&lt;host&gt;/api/customers?pageSize=100&page=0</li>
                         <li>Fetch project devices (MEP devices) detail : https://&lt;host&gt;/api/customer/&lt;project ID&gt;/devices?pageSize=500&page=0 , Save the device ID for the device(s) you wish to access</li>
                         <li>Fetch project assets (building/floors) detail : https://&lt;host&gt;/api/customer/&lt;project ID&gt;/assets?pageSize=50&page=0 , Save the asset ID for the asset(s) you wish to access</li>
+                        <li>Device Timeseries Keys - Endpoint : {{ endPointStringDTK }}</li>
+                        <li>Device Semi-Static Keys - Endpoint : {{ endPointStringDAK }}</li>
+                        <li>Device Timeseries Point Data (Data updated frequently i.e. every 15 minutes) - Endpoint : {{ endPointStringDT }}</li>
+                        <li>Device Semi-Static Point Data (Data updated infrequently or not at all) - Endpoint : {{ endPointStringDA }}</li>
                       </ul>
                 <hr>
                 <a href="./iframe-index.html" class="n0-button n0-black n0-round-large n0-hover-indigo">
