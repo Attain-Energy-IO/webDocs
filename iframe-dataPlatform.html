@@ -40,7 +40,7 @@
                 <hr>
                   <h5>Management API</h5>
                       <ol class="n0-ol n0-border n0-padding-16">
-                        <p>API Access</p>
+                        <p>Quick API Access</p>
                         <li>Authenticate your user and obtain access token here : https://<host>/api/auth/login , and periodically refresh the token here : https://<host>/api/auth/token , All subsequent requests will require Bearer token in request header</li>
                         <li>Fetch site details. Each site is represented as PROJECT_ABCD, where ABCD is a unique project reference : https://<host>/api/customers?pageSize=100&page=0 , Site name can be found under : payload.data[index].additionalInfo.description, Save the project ID for the project you wish to access</li>
                         <li>Fetch project devices (MEP devices) detail : https://<host>/api/customer/<project ID>/devices?pageSize=500&page=0 , Save the device ID for the device(s) you wish to access</li>
