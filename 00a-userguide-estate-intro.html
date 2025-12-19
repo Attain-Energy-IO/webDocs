@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attain Energy IO – Introduction</title>
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./index.js" defer></script>
+  <style>
+    body { font-family: 'Raleway', sans-serif; margin:0; background:#fafafa; }
+    .topbar { background:#00112b; color:white; padding:12px 24px; position:fixed; top:0; left:0; right:0; z-index:10; }
+    .sidebar { width:260px; background:white; position:fixed; top:0; bottom:0; padding:70px 10px 10px 10px; overflow-y:auto; border-right:1px solid #ddd; }
+    .content { margin-left:280px; padding:80px 40px; }
+    h1,h2,h3 { color:#00112b; }
+    ul { margin-left:1.5em; }
+    table { border-collapse: collapse; width:100%; margin-top:1em; }
+    th, td { border:1px solid #ccc; padding:8px; text-align:left; }
+    th { background:#f5f5f5; }
+    .image-placeholder { border:1px dashed #aaa; padding:40px; text-align:center; color:#666; margin:12px 0; }
+    a.navlink { display:block; padding:8px 16px; color:#333; text-decoration:none; border-radius:6px; margin-bottom:4px; }
+    a.navlink:hover { background:#f0f0f0; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="topbar"><strong>Attain Energy IO – User Guide</strong></div>
+    <div class="sidebar">
+      <h4>Guide Contents</h4>
+      <a class="navlink" href="./userguide-introduction.html">Introduction</a>
+      <hr>
+      <a class="navlink" href="./userguide-performance.html">1-Performance</a>
+      <a class="navlink" href="./userguide-services.html">2-Services</a>
+      <a class="navlink" href="./userguide-hvac.html">3-HVAC</a>
+      <a class="navlink" href="./userguide-comfort.html">4-Comfort</a>
+      <a class="navlink" href="./userguide-enhancement.html">5-Enhancement</a>
+      <a class="navlink" href="./userguide-faults.html">6-Faults</a>
+      <a class="navlink" href="./userguide-health.html">7-Health</a>
+      <a class="navlink" href="./userguide-mepsystems.html">8-MEP Systems</a>
+      <a class="navlink" href="./userguide-commissioning.html">9-Commissioning</a>
+      <a class="navlink" href="./userguide-reporting.html">10-Reporting</a>
+      <hr>
+      <a class="navlink" href="./vbmapp-overview.html">VBM Workspace App</a>
+      <hr>
+      <!--a class="navlink" href="./index.html">Platform Data Service</a-->
+    </div>
+
+    <main class="content">
+
+        <h2>Introduction</h2>
+        <p>This document acts as a user guide for the Attain Energy platform user interface. Each connected building has a set of dashboard pages available to users once logged in.</p>
+        <p>Every effort is made to provide a harmonized and consistent view of buildings connected to Attain. Due to high levels of variability in building configuration and data availability, some differences building-to-building should be expected</p>
+
+        <h2>User Roles</h2>
+        <p>Users are assigned access privileges upon account creation. They fall into one of the following categories:</p>
+        <ul>
+          <li><strong>Estate User</strong> — Access to many or all buildings in an estate</li>
+          <li><strong>Building User</strong> — Access to a single building</li>
+          <li><strong>Floors/Tenant User</strong> — Access to one or more floors in a building</li>
+        </ul>
+      
+        <h2>Dashboard Groups</h2>
+        <p>Dashboard groups categorize data into logical themes (Performance, Services, HVAC, etc.), each containing multiple dashboard pages for deeper drilldowns.</p>
+        <table>
+          <thead>
+            <tr><th>Group Name</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Performance</td><td>Overall building performance</td></tr>
+            <tr><td>Services</td><td>Primary services & utilities</td></tr>
+            <tr><td>HVAC</td><td>Heating ventilation & air conditioning services</td></tr>
+            <tr><td>Comfort</td><td>Environmental comfort</td></tr>
+            <tr><td>Enhancement</td><td>Automated energy management (Active Trim)</td></tr>
+            <tr><td>Faults</td><td>Fault detection and diagnostics</td></tr>
+            <tr><td>Health</td><td>Equipment health</td></tr>
+            <tr><td>MEP Systems</td><td>Non-HVAC MEP systems</td></tr>
+            <tr><td>Commissioning</td><td>Testing & commissioning management</td></tr>
+            <tr><td>Reporting</td><td>Bespoke customer reports</td></tr>
+          </tbody>
+        </table>
+      
+        <h2>Generic Navigation Items</h2>
+          <p>Buttons and selectors common to all dashboards:</p>
+            <img src="https://i.ibb.co/GfX7KzPF/legend.png" border="0" width="100%" />
+
+    </main>
+  </div>
+</body>
+</html>
