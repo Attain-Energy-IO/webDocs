@@ -87,8 +87,9 @@ const app = Vue.createApp({
     },
 
     mounted() {
-        this.getPoints(); 
-        this.getAssetEndpoints(); 
+        this.getPlatformData();
+        //this.getPoints(); 
+        //this.getAssetEndpoints(); 
     },
 
     methods: {
@@ -99,8 +100,8 @@ const app = Vue.createApp({
             this.sidebarVisible = false;
         },
         
-        getPoints() {
-            const url = 'https://red.attain-energy.io/getPoints';
+        getPlatformData() { // was getPoints
+            const url = 'https://red.attain-energy.io/getPlatformData';
             fetch(url).then(res => {
                 if (res.status === 200) {
                     res.json().then(data => {
