@@ -100,7 +100,7 @@ const app = Vue.createApp({
         },
         
         getPoints() {
-            const url = 'https://deacd1a7-d2c5-4f60-95ca-96454fc103c0-bluemix:d4c99862cb917b471bd2d9e5e37a3ed1c75be38565c648d41e20924d6bf1657c@deacd1a7-d2c5-4f60-95ca-96454fc103c0-bluemix.cloudantnosqldb.appdomain.cloud/platform-documentation/points?include_docs=true';
+            const url = 'https://red.attain-energy.io/getPoints';
             fetch(url).then(res => {
                 if (res.status === 200) {
                     res.json().then(data => {
