@@ -234,14 +234,16 @@ const app = Vue.createApp({
             if (x == "General MEP") { selected = "MEP" }
             
             const refData = this.pointsListD;
-            for (var i=0; i<refData.length; i++) {
-                //if (refData[i].col6==selected) {
-                    //items.push([data[i].col1, data[i].col2, selected])
-                //}
+            let items = [];
+            for (let i = 0; i < refData.length; i++) {
+                if (refData[i].col6==selected) {
+                    items.push([data[i].col1, data[i].col2, selected])
+                }
             }
-
-
-            
+            this.dataObject = items;
+                for (let j = 0; j < items[0].length; j++) {
+                    this.listB.push(items[0][j][0]);
+                }
         },
 
         setItem() {
