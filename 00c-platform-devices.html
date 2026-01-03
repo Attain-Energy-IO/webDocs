@@ -80,7 +80,7 @@
             <div class="n0-container n0-padding-16 n0-border">
             <h3><b>MEP devices - Semi-static data key names</b></h3>
             <div class="n0-responsive">
-                <table class="n0-table n0-bordered n0-hoverable">
+                <table class="n0-table n0-bordered n0-hoverable n0-white">
                     <thead>
                         <tr class="n0-teal">
                             <th>Attain Key</th>
@@ -90,7 +90,7 @@
                     </thead>
                 
                     <tbody>
-                        <tr class="n0-white" v-for="(row, rowIndex) in pointsListC" :key="rowIndex">
+                        <tr v-for="(row, rowIndex) in pointsListC" :key="rowIndex">
                             <td v-for="(value, colIndex) in row" :key="colIndex">
                                 {{ value }}
                             </td>
