@@ -6,9 +6,9 @@ const app = Vue.createApp({
             selectA: "",
             selectB: "",
             listA: [
-                "Attain HVAC",
-                "Attain Metering",
-                "Attain Sensors",
+                "HVAC-A",
+                "Metering",
+                "Sensors-A",
                 "General MEP", 
                 "HVAC-R", 
                 "Electrical Service", 
@@ -215,9 +215,9 @@ const app = Vue.createApp({
                 //}
             //});
             let selected = "";
-            if (x == "Attain HVAC") { selected = "ATTAIN_HVAC" }
-            if (x == "Attain Metering") { selected = "ATTAIN_METERS" }
-            if (x == "Attain Sensors") { selected = "ATTAIN_SENSORS" }
+            if (x == "HVAC-A") { selected = "ATTAIN_HVAC" }
+            if (x == "Metering") { selected = "ATTAIN_METERS" }
+            if (x == "Sensors-A") { selected = "ATTAIN_SENSORS" }
             if (x == "HVAC-R") {selected = "HVAC"}
             if (x == "Electrical Service") { selected = "PMS" }
             if (x == "Security System") { selected = "SEC" }
