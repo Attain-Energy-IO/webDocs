@@ -250,10 +250,10 @@ const app = Vue.createApp({
         setItem() {
             const x = this.selectB;
             const y = this.dataObject;
-            for (let i = 0; i < y[0].length; i++) {
-                if (y[0][i][0] === x) {
-                    this.item = y[0][i][1];
-                    this.sys = y[0][i][2];
+            for (let i = 0; i < y.length; i++) {
+                if (y[i][0] === x) {
+                    this.item = y[i][1];
+                    this.sys = y[i][2];
                 }
             }
             const z = this.item;
