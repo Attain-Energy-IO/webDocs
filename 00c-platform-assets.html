@@ -42,7 +42,7 @@
                     <div class="n0-third">
                         <select v-model="selectP" v-on:change="getAssetEndpoint()" class="n0-select" name="option">
                         <option value="" disabled selected>Select Asset Type</option>
-                        <option v-for="item in assetEndpointListA">{{ item }}</option>
+                        <option v-for="item in assetsData">{{ item }}</option>
                         </select>
                     </div>
                 </div>
