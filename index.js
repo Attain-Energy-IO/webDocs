@@ -117,17 +117,6 @@ const app = Vue.createApp({
                 }
             });
         },
-        //getAssetEndpoints() {
-            //const url = 'https://red.attain-energy.io/assetEndpointsA';
-            //fetch(url).then(res => {
-                //if (res.status === 200) {
-                    //res.json().then(data => {
-                        //console.log(data);
-                        //this.assetEndpointListA = data;
-                    //});
-                //}
-            //});
-        //},
         
         syntaxHighlight(input) {
             let jsonString;
