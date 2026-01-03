@@ -66,6 +66,25 @@
                 </a>
             </div>
 
+        <div class="n0-container n0-padding-16 n0-teal">
+        <h5>Telemetry keys list for all MEP equipment items</h5>
+        <hr>
+        <div class="n0-responsive">
+            <table class="n0-table n0-bordered n0-hoverable">
+                <thead>
+                    <tr class="n0-teal">
+                        <th v-for="(value, key) in pointsListA[0]" :key="key">{{ key }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(point, index) in pointsListA" :key="index">
+                        <td v-for="(value, key) in point" :key="key">{{ value }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>  
+        </div>
+
     <!-- End page content -->
     </div>
 
