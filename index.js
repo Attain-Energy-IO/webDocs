@@ -268,8 +268,9 @@ const app = Vue.createApp({
                 //}
             //});
             let refData = this.pointsListB;
+            let item = z.split('_')[0];
             for (let device in refData) {
-                if (refData[device][0].includes(z)) {
+                if (refData[device][0].includes(item)) {
                     this.devceDataT = refData[device];
                 }
             }
