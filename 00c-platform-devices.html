@@ -59,8 +59,8 @@
                 <p>Copy and paste elements of the device name into the <strong>Entities / Devices</strong> search field to find related devices and data</p>
             </div>
 
-            <div class="n0-container n0-padding-16">
-            <h3><b>Telemetry key names for all MEP devices</b></h3>
+            <div class="n0-container n0-padding-16 n0-border">
+            <h3><b>MEP devices - Timeseries data key names</b></h3>
             <div class="n0-responsive">
                 <table class="n0-table n0-bordered n0-hoverable">
                     <thead>
@@ -71,6 +71,29 @@
                     <tbody>
                         <tr v-for="(point, index) in pointsListA" :key="index">
                             <td v-for="(value, key) in point" :key="key">{{ value }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  
+            </div>
+
+            <div class="n0-container n0-padding-16 n0-border">
+            <h3><b>MEP devices - Semi-static data key names</b></h3>
+            <div class="n0-responsive">
+                <table class="n0-table n0-bordered n0-hoverable">
+                    <thead>
+                        <tr class="n0-teal">
+                            <th>Point Key</th>
+                            <th>Data Type</th>
+                            <th>Value Composition</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        <tr v-for="(row, rowIndex) in pointsListC" :key="rowIndex">
+                            <td v-for="(value, colIndex) in row" :key="colIndex">
+                                {{ value }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
