@@ -35,6 +35,7 @@ const app = Vue.createApp({
             pointsListB: [], // POINTS LIST PER DEVICE TYPE
             pointsListC: [], // DEVICE SEMI STATIC ATTRIBUTES
             pointsListD: [], // DEVICE BDNS NAMES
+            assetsData : {},
             selectP: "",
             endPointStringAT: "https://<host>/api/plugins/telemetry/ASSET/<assetID>/values/timeseries?keys=<comma separated list>&startTs=<range start UTC Timestamp milliseconds>&endTs=<range stop UTC Timestamp milliseconds> (Not including startTs and endTs results in last telemetry value being returned)",
             endPointStringAA: "https://<host>/api/plugins/telemetry/ASSET/<assetID>/values/attributes?keys=<comma separated list>",
@@ -42,7 +43,7 @@ const app = Vue.createApp({
             endPointStringDA: "https://<host>/api/plugins/telemetry/DEVICE/<deviceID>/values/attributes?keys=<comma separated list>",
             endPointStringDTK: "https://<host>/api/plugins/telemetry/DEVICE/<deviceID>/keys/timeseries",
             endPointStringDAK: "https://<host>/api/plugins/telemetry/DEVICE/<deviceID>/keys/attributes",
-            assetEndpointListA: [],
+            assetEndpointListA: [], // [building,floor]
             selectedEndpointT: "",
             selectedEndpointA: "",
             dataDesignA: {
@@ -88,8 +89,7 @@ const app = Vue.createApp({
     },
 
     mounted() {
-        this.getPlatformDevicesData();
-        //this.getAssetEndpoints(); 
+        this.getPlatformData();
     },
 
     methods: {
@@ -100,7 +100,7 @@ const app = Vue.createApp({
             this.sidebarVisible = false;
         },
         
-        getPlatformDevicesData() { 
+        getPlatformData() { 
             const url = 'https://red.attain-energy.io/getPlatformData';
             fetch(url).then(res => {
                 if (res.status === 200) {
@@ -110,6 +110,7 @@ const app = Vue.createApp({
                         this.pointsListB = data.b;
                         this.pointsListC = data.c;
                         this.pointsListD = data.d;
+                        this.assetsData = data.e;
                     });
                 }
             });
