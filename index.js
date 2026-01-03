@@ -3,6 +3,7 @@ const app = Vue.createApp({
         return {
             sidebarVisible: false,
             dataObject: "",
+            assetsData: {},
             selectA: "",
             selectB: "",
             listA: [
@@ -163,30 +164,9 @@ const app = Vue.createApp({
             }
             this.endPointStringAT = 'https://<host>/api/plugins/telemetry/ASSET/<assetID>/values/timeseries?keys=<comma separated list>&startTs=<range start UTC Timestamp milliseconds>&endTs=<range stop UTC Timestamp milliseconds> (Not including startTs and endTs results in last telemetry value being returned)';
             this.endPointStringAA = 'https://<host>/api/plugins/telemetry/ASSET/<assetID>/values/attributes?keys=<comma separated list>';
-            const url = `https://red.attain-energy.io/assetEndpointsB?endPoint=${endP}`;
-            fetch(url)
-                .then(res => {
-                    if (res.status === 200) {
-                        return res.json().catch(error => {
-                            console.error("Response is not valid JSON:", error);
-                            return Promise.reject("Invalid JSON response");
-                        });
-                    } else {
-                        console.warn("Server responded with status:", res.status);
-                        return Promise.reject(`Server error: ${res.status}`);
-                    }
-                })
-                .then(data => {
-                    console.log("Fetched endpoint data:", data);
-                    this.selectedEndpointT = data.timeseries;
-                    this.selectedEndpointA = data.semistatic;
-                })
-                .catch(error => {
-                    console.error("Fetch error:", error);
-                    // Show an error message instead of JSON if there was a fetch error
-                    this.selectedEndpointT = `Error: ${error}`;
-                    this.selectedEndpointA = `Error: ${error}`;
-                });
+            let refData = this.assetsData;
+            this.selectedEndpointT = refData[endP].timeseries;
+            this.selectedEndpointA = refData[endP].semistatic;
         },
     
         setSystem() {
