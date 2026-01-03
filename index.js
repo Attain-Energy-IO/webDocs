@@ -233,7 +233,7 @@ const app = Vue.createApp({
             if (x == "Appliances") { selected = "APL" }
             if (x == "General MEP") { selected = "MEP" }
             
-            const refData = this.pointsListD;
+            let refData = this.pointsListD;
             let items = [];
             for (let i = 0; i < refData.length; i++) {
                 if (refData[i].col6==selected) {
@@ -258,16 +258,18 @@ const app = Vue.createApp({
             }
             const z = this.item;
             console.log(z);
-            const url = `https://red.attain-energy.io/getDeviceConfig?item=${z}`;
-            fetch(url).then(res => {
-                if (res.status === 200) {
-                    res.json().then(data => {
-                        console.log(data);
-                        this.deviceDataT = data
-                    });
-                }
-            });
-            this.getAssetName();
+            //const url = `https://red.attain-energy.io/getDeviceConfig?item=${z}`;
+            //fetch(url).then(res => {
+                //if (res.status === 200) {
+                    //res.json().then(data => {
+                        //console.log(data);
+                        //this.deviceDataT = data
+                    //});
+                //}
+            //});
+            //this.getAssetName();
+            let refData = this.pointsListB;
+            console.log(refData)
         },
 
         getAssetName() {
