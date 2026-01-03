@@ -241,9 +241,10 @@ const app = Vue.createApp({
                 }
             }
             this.dataObject = items;
-                for (let j = 0; j < items[0].length; j++) {
-                    this.listB.push(items[0][j][0]);
-                }
+            console.log(items);
+                //for (let j = 0; j < items[0].length; j++) {
+                    //this.listB.push(items[0][j][0]);
+                //}
         },
 
         setItem() {
