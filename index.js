@@ -237,7 +237,7 @@ const app = Vue.createApp({
             let items = [];
             for (let i = 0; i < refData.length; i++) {
                 if (refData[i].col6==selected) {
-                    items.push([data[i].col1, data[i].col2, selected])
+                    items.push([refData[i].col1, refData[i].col2, selected])
                 }
             }
             this.dataObject = items;
