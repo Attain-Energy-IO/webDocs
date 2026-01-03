@@ -202,18 +202,46 @@ const app = Vue.createApp({
             const x = this.selectA;
             this.listB = [];
             this.equipmentReference = "";
-            const url = `https://red.attain-energy.io/getDevicesData?sys=${x}`;
-            fetch(url).then(res => {
-                if (res.status === 200) {
-                    res.json().then(data => {
-                        console.log(data);
-                        this.dataObject = data;
-                        for (let i = 0; i < data[0].length; i++) {
-                            this.listB.push(data[0][i][0]);
-                        }
-                    });
-                }
-            });
+            //const url = `https://red.attain-energy.io/getDevicesData?sys=${x}`;
+            //fetch(url).then(res => {
+                //if (res.status === 200) {
+                    //res.json().then(data => {
+                        //console.log(data);
+                        //this.dataObject = data;
+                        //for (let i = 0; i < data[0].length; i++) {
+                            //this.listB.push(data[0][i][0]);
+                        //}
+                    //});
+                //}
+            //});
+            let selected = "";
+            if (x == "Attain HVAC") { selected = "ATTAIN_HVAC" }
+            if (x == "Attain Metering") { selected = "ATTAIN_METERS" }
+            if (x == "Attain Sensors") { selected = "ATTAIN_SENSORS" }
+            if (x == "HVAC-R") {selected = "HVAC"}
+            if (x == "Electrical Service") { selected = "PMS" }
+            if (x == "Security System") { selected = "SEC" }
+            if (x == "Audio/Visual System") { selected = "AV" }
+            if (x == "Vertical Transportation") { selected = "VRT" }
+            if (x == "Waste Management") { selected = "WST" }
+            if (x == "Catering") { selected = "CAT" }
+            if (x == "Smart Sensors") { selected = "xxx" }
+            if (x == "ICT") { selected = "ICT" }
+            if (x == "Fire/Smoke System") { selected = "FIR" }
+            if (x == "Lighting") { selected = "LTG" }
+            if (x == "Renewable Energy") { selected = "ENE" }
+            if (x == "Appliances") { selected = "APL" }
+            if (x == "General MEP") { selected = "MEP" }
+            
+            const refData = this.pointsListD;
+            for (var i=0; i<refData.length; i++) {
+                //if (refData[i].col6==selected) {
+                    //items.push([data[i].col1, data[i].col2, selected])
+                //}
+            }
+
+
+            
         },
 
         setItem() {
