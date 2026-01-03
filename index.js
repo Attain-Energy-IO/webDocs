@@ -269,7 +269,12 @@ const app = Vue.createApp({
             //});
             //this.getAssetName();
             let refData = this.pointsListB;
-            console.log(refData)
+            let item = z.split('_')[0];
+            for (let device in refData) {
+                if (refData[device][0].includes(item)) {
+                    this.devceDataT = refData[device];
+                }
+            }
         },
 
         getAssetName() {
