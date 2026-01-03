@@ -34,6 +34,7 @@ const app = Vue.createApp({
             pointsListA: [], // LIST OF ALL TELEMETRY NAMES
             pointsListB: [], // POINTS LIST PER DEVICE TYPE
             pointsListC: [], // DEVICE SEMI STATIC ATTRIBUTES
+            pointsListD: [], // DEVICE BDNS NAMES
             selectP: "",
             endPointStringAT: "https://<host>/api/plugins/telemetry/ASSET/<assetID>/values/timeseries?keys=<comma separated list>&startTs=<range start UTC Timestamp milliseconds>&endTs=<range stop UTC Timestamp milliseconds> (Not including startTs and endTs results in last telemetry value being returned)",
             endPointStringAA: "https://<host>/api/plugins/telemetry/ASSET/<assetID>/values/attributes?keys=<comma separated list>",
@@ -87,8 +88,7 @@ const app = Vue.createApp({
     },
 
     mounted() {
-        this.getPlatformData();
-        //this.getPoints(); 
+        this.getPlatformDevicesData();
         //this.getAssetEndpoints(); 
     },
 
@@ -100,7 +100,7 @@ const app = Vue.createApp({
             this.sidebarVisible = false;
         },
         
-        getPlatformData() { // was getPoints
+        getPlatformDevicesData() { 
             const url = 'https://red.attain-energy.io/getPlatformData';
             fetch(url).then(res => {
                 if (res.status === 200) {
@@ -109,6 +109,7 @@ const app = Vue.createApp({
                         this.pointsListA = data.a;
                         this.pointsListB = data.b;
                         this.pointsListC = data.c;
+                        this.pointsListD = data.d;
                     });
                 }
             });
