@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+    <title>Smart Building Toolkit</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://example.com/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./index.js" defer></script>
+
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+
+</head>
+
+<body class="n0-light-grey">
+
+    <div id="smartBldgDesign">
+
+        <!-- !PAGE CONTENT! -->
+        <div class="n0-main">
+
+            <div class="n0-container n0-padding-16 n0-border">
+                <h3><b> - Naming schema checker</b></h3>
+                <div class="n0-row-padding-small">
+                    <div class="n0-half n0-padding">
+                        <select v-model="selectA" v-on:change="setSystem()" class="n0-select" name="option">
+                        <option value="" disabled selected>Select System</option>
+                        <option v-for="item in listA">{{ item }}</option>
+                        </select>
+                    </div>
+
+                    <div class="n0-half n0-padding">
+                        <select v-model="selectB" v-on:change="setItem()" class="n0-select" name="option">
+                        <option value="" disabled selected>Select Item</option>
+                        <option v-for="item in listB">{{ item }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="n0-container n0-padding-16">
+                <p>Device naming schema : <strong>{{ equipmentReference }}</strong></p>
+                <p>Raw telemetry keys, Transmitted from edge every 15 mins : {{ deviceDataT }}</p>
+                <p>Copy and paste elements of the device name into the <strong>Entities / Devices</strong> search field to find related devices and data</p>
+            </div>
+
+            <div class="n0-container n0-padding-16 n0-border">
+            <h3><b>MEP devices - Timeseries data key names</b></h3>
+            <div class="n0-responsive">
+                <table class="n0-table n0-bordered n0-hoverable">
+                    <thead>
+                        <tr class="n0-teal">
+                            <th v-for="(value, key) in pointsListA[0]" :key="key">{{ key }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(point, index) in pointsListA" :key="index">
+                            <td v-for="(value, key) in point" :key="key">{{ value }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  
+            </div>
+
+            <div class="n0-container n0-padding-16 n0-border">
+            <h3><b>MEP devices - Semi-static data key names</b></h3>
+            <div class="n0-responsive">
+                <table class="n0-table n0-bordered n0-hoverable">
+                    <thead>
+                        <tr class="n0-teal">
+                            <th>Attain Key</th>
+                            <th>Data Type</th>
+                            <th>Value Composition</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        <tr v-for="(row, rowIndex) in pointsListC" :key="rowIndex">
+                            <td v-for="(value, colIndex) in row" :key="colIndex">
+                                {{ value }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  
+            </div>
+
+            <a href="./iframe-index.html" class="n0-button n0-black n0-round-large n0-hover-indigo">Docs Menu</a>
+
+    <!-- End page content -->
+    </div>
+
+</body>
+</html>
