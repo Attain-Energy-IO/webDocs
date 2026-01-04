@@ -49,7 +49,7 @@ const app = Vue.createApp({
             dataDesignA: {
                 'data':{
                     'DEVICE_A_NAME (from Attain device naming schema)': {
-                        'telemetry key name (from points library <Attain Key>)':'<point value> (NUMBER, STRING, BOOL->NUM 0/1)'
+                        'telemetry key name (from points library <Attain Key>)':'<point value> (All values mapped to numeric values)'
                     },
                     'DEVICE_B_NAME': {},
                     'DEVICE_C_NAME': {},
@@ -70,7 +70,7 @@ const app = Vue.createApp({
             dataDesignB: {
                 'data': 
                     [
-                        ['DEVICE_NAME','command type (SETPOINT/MODE/SCHEDULE)','desired value i.e 21.0','current value i.e 22.5','minute of day timestamp','expected energy saving KWh'],
+                        ['DEVICE_NAME','command type (SETPOINT/MODE/SCHEDULE)','desired value i.e 21.0','current value i.e 22.5','minute of day timestamp','computed energy saving KWh'],
                         ['DEVICE_NAME','SETPOINT','20.5','21.5','660','0.3'],
                         ['DEVICE_NAME','MODE','FAN','HEAT','720','1.2'],
                         ['...'],
