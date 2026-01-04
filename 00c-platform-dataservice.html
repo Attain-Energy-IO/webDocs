@@ -35,10 +35,11 @@
         <!-- !PAGE CONTENT! -->
         <div class="n0-main">
 
-            <div class="n0-container n0-padding-16">
+            <div class="n0-container n0-padding-16">            
                 <h3><b>Attain Data Platform</b></h3>
                   <h5>Management API</h5>
-                      <ol class="n0-ol n0-border n0-padding-16">
+                    <div class="n0-panel n0-white n0-border n0-round-large">
+                      <ol class="n0-ol n0-padding-16">
                         <p>Quick API Access - Assets & Devices</p>
                         <li>Authenticate your user and obtain access token here : https://&lt;host&gt;/api/auth/login , and periodically refresh the token here : https://&lt;host&gt;/api/auth/token , All subsequent requests will require Bearer token in request header</li>
                         <li>Fetch project details. Each site is represented as SITE_NAME PROJECT_ABCD, where ABCD is a unique project reference : https://&lt;host&gt;/api/customers?pageSize=100&page=0</li>
@@ -55,6 +56,7 @@
                         <li>Asset Timeseries Point Data - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/values/timeseries?keys=&lt;comma separated keys&gt;&startTs=&lt;range start UTC Timestamp milliseconds&gt;&endTs=&lt;range stop UTC Timestamp milliseconds&gt; (Not including startTs and endTs results in last telemetry value being returned)</li>
                         <li>Asset Semi-Static Point Data - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/values/attributes?keys=&lt;comma separated keys&gt;</li>
                       </ol>
+                    </div>
             </div>
             
             <br>
