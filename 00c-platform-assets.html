@@ -38,15 +38,17 @@
             <div class="n0-container n0-padding-16">
                 <h3><b>Asset Type</b></h3>
                 <hr>
-                <div class="n0-row-padding-small">
-                    <div class="n0-third">
+                <div class="n0-row">
+                    <div class="n0-third n0-padding">
                         <select v-model="selectP" v-on:change="getAssetEndpoint()" class="n0-select" name="option">
                         <option value="" disabled selected>Select Asset Type</option>
                         <option v-for="item in assetsListA">{{ item }}</option>
                         </select>
                     </div>
+                    <div class="n0-twothird n0-padding">
+                        <p>Asset naming schema : {{ assetReference }}</p>
+                    </div>
                 </div>
-                <p>Asset naming schema : {{ assetReference }}</p>
             </div>
 
             <div class="n0-container n0-dark-grey n0-padding">
