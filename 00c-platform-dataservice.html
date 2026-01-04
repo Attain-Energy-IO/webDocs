@@ -40,18 +40,20 @@
                   <h5>Management API - Quick Access</h5>
                     <div class="n0-panel n0-white n0-border n0-round-large">
                       <ol class="n0-ol n0-padding-16">
-                        <p><b>Client Authentication</b></p>
+                      <p><b>Client Authentication</b></p>
                         <li>Authenticate your user and obtain access token here : https://&lt;host&gt;/api/auth/login , and periodically refresh the token here : https://&lt;host&gt;/api/auth/token , All subsequent requests will require Bearer token in request header</li>
                         <li>Fetch project details. Each site is represented as SITE_NAME PROJECT_ABCD, where ABCD is a unique project reference : https://&lt;host&gt;/api/customers?pageSize=100&page=0</li>
                         <li>Fetch project devices (MEP devices) detail : https://&lt;host&gt;/api/customer/&lt;project ID&gt;/devices?pageSize=500&page=0 , Save the device ID for the device(s) you wish to access</li>
                         <li>Fetch project assets (building/floors) detail : https://&lt;host&gt;/api/customer/&lt;project ID&gt;/assets?pageSize=50&page=0 , Save the asset ID for the asset(s) you wish to access</li>
                       </ol>
+                      <p><b>Device Quick Data Access</b></p>
                       <ul>
                         <li>Device Timeseries Keys - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/DEVICE/&lt;device ID&gt;/keys/timeseries</li>
                         <li>Device Semi-Static Keys - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/DEVICE/&lt;device ID&gt;/keys/attributes</li>
                         <li>Device Timeseries Point Data - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/DEVICE/&lt;device ID&gt;/values/timeseries?keys=&lt;comma separated keys&gt;&startTs=&lt;range start UTC Timestamp milliseconds&gt;&endTs=&lt;range stop UTC Timestamp milliseconds&gt; (Not including startTs and endTs results in last telemetry value being returned)</li>
                         <li>Device Semi-Static Point Data - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/DEVICE/&lt;device ID&gt;/values/attributes?keys=&lt;comma separated keys&gt;</li>
                       </ul>  
+                      <p><b>Asset Quick Data Access</b></p>
                       <ul>
                         <li>Asset Timeseries Keys - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/keys/timeseries</li>
                         <li>Asset Semi-Static Keys - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/keys/attributes</li>  
