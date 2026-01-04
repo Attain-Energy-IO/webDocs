@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+    <title>Smart Building Toolkit</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://example.com/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./index.js" defer></script>
+
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+
+</head>
+
+<body class="n0-light-grey">
+
+    <div id="smartBldgDesign">
+
+        <!-- !PAGE CONTENT! -->
+        <div class="n0-main">
+
+            <div class="n0-container">
+              <p>Site data transports specify how data is transmitted between site and the Attain platform. The platform uses simplified data structures to enable easy transmision of telemetry and command/control data</p>
+              <p>The Attain data transport design ensures maximum data efficiency and enables other outcomes such as rapid site onboarding and fast add-on with other apps and services</p>
+            
+              <ul class="n0-ul n0-border">
+                <li><h6><b>Site telemetry data object | SITE -- PUSH --> PLATFORM | 15 minute intervals</b></h6></li>
+                <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignA)"></pre></li>
+                <li><p>All device metadata and relations are stored as server side device attributes</p></li>
+              </ul>
+            <br>
+              <ul class="n0-ul n0-border">
+                <li><h6><b>Attain trim (commands) data object | SITE -- FETCH --> PLATFORM --> SITE | 15 minute intervals</b></h6></li>
+                <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignB)"></pre></li>
+                <li><p>Device commands are aggregated within each 15 minute interval then served from the Attain platform to the edge. Commands are then routed to applicable control devices</p></li>
+              </ul>
+            <br>
+              <ul class="n0-ul n0-border">
+                <li><h6><b>Attain fast updates (User engagement App commands) data object | SITE -- FETCH --> PLATFORM --> SITE | 1 minute interval</b></h6></li>
+                <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignC)"></pre></li>
+                <li><p>Device commands are aggregated within each 1 minute interval then served from the Attain platform to the edge. Commands are then routed to applicable control devices</p></li>
+              </ul>
+            <br>
+              <ul class="n0-ul n0-border">
+                <li><h6><b>Data from third party web services and pre-enabled buildings | ATTAIN VIRTUAL GATEWAY -- FETCH --> WEB SERVICE --> ATTAIN VIRTUAL GATEWAY -- PUSH --> PLATFORM</b></h6></li>
+                <li><p>Data polling interval to be set depending on data requirements. Attain virtual gateway to map device names and telemetry key names to Attain standard before transporting data to platform</p></li>
+              </ul>
+            </div>
+            
+            <br>
+                <a href="./iframe-index.html" class="n0-button n0-black n0-round-large n0-hover-indigo">Docs Menu</a>
+            </div>
+
+    <!-- End page content -->
+    </div>
+
+</body>
+</html>
