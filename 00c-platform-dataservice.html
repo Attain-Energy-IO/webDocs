@@ -30,7 +30,7 @@
 
 <body class="n0-light-grey">
 
-    <div id="smartBldgDesign">
+    <div>
 
         <!-- !PAGE CONTENT! -->
         <div class="n0-main">
@@ -55,34 +55,6 @@
                         <li>Asset Timeseries Point Data - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/values/timeseries?keys=&lt;comma separated keys&gt;&startTs=&lt;range start UTC Timestamp milliseconds&gt;&endTs=&lt;range stop UTC Timestamp milliseconds&gt; (Not including startTs and endTs results in last telemetry value being returned)</li>
                         <li>Asset Semi-Static Point Data - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/values/attributes?keys=&lt;comma separated keys&gt;</li>
                       </ol>
-            </div>
-
-            <div class="n0-container">
-              <p>Site data transports specify how data is transmitted between site and the Attain platform. The platform uses simplified data structures to enable easy transmision of telemetry and command/control data</p>
-              <p>The Attain data transport design ensures maximum data efficiency and enables other outcomes such as rapid site onboarding and fast add-on with other apps and services</p>
-            
-              <ul class="n0-ul n0-border">
-                <li><h6><b>Site telemetry data object | SITE -- PUSH --> PLATFORM | 15 minute intervals</b></h6></li>
-                <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignA)"></pre></li>
-                <li><p>All device metadata and relations are stored as server side device attributes</p></li>
-              </ul>
-            <br>
-              <ul class="n0-ul n0-border">
-                <li><h6><b>Attain trim (commands) data object | SITE -- FETCH --> PLATFORM --> SITE | 15 minute intervals</b></h6></li>
-                <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignB)"></pre></li>
-                <li><p>Device commands are aggregated within each 15 minute interval then served from the Attain platform to the edge. Commands are then routed to applicable control devices</p></li>
-              </ul>
-            <br>
-              <ul class="n0-ul n0-border">
-                <li><h6><b>Attain fast updates (User engagement App commands) data object | SITE -- FETCH --> PLATFORM --> SITE | 1 minute interval</b></h6></li>
-                <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignC)"></pre></li>
-                <li><p>Device commands are aggregated within each 1 minute interval then served from the Attain platform to the edge. Commands are then routed to applicable control devices</p></li>
-              </ul>
-            <br>
-              <ul class="n0-ul n0-border">
-                <li><h6><b>Data from third party web services and pre-enabled buildings | ATTAIN VIRTUAL GATEWAY -- FETCH --> WEB SERVICE --> ATTAIN VIRTUAL GATEWAY -- PUSH --> PLATFORM</b></h6></li>
-                <li><p>Data polling interval to be set depending on data requirements. Attain virtual gateway to map device names and telemetry key names to Attain standard before transporting data to platform</p></li>
-              </ul>
             </div>
             
             <br>
