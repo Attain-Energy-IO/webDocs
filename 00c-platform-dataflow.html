@@ -40,13 +40,13 @@
               <p>The Attain data transport design ensures maximum data efficiency and enables other outcomes such as rapid site onboarding and fast add-on with other apps and services</p>
             
               <ul class="n0-ul n0-border n0-white n0-round-large">
-                <li><h6><b>Site telemetry data object | SITE -- PUSH --> PLATFORM | 15 minute intervals</b></h6></li>
+                <li><h6><b>Site telemetry data object | SITE -(gateway)- PUSH > PLATFORM | 15 minute intervals</b></h6></li>
                 <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignA)"></pre></li>
                 <li><p>All device metadata and relations are stored as server side device attributes</p></li>
               </ul>
             <br>
-              <ul class="n0-ul n0-border">
-                <li><h6><b>Attain trim (commands) data object | SITE -- FETCH --> PLATFORM --> SITE | 15 minute intervals</b></h6></li>
+              <ul class="n0-ul n0-border n0-white n0-round-large">
+                <li><h6><b>Attain trim (commands) data object | SITE -(gateway)- FETCH > PLATFORM -(gateway)- SITE | 15 minute intervals</b></h6></li>
                 <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignB)"></pre></li>
                 <li><p>Device commands are aggregated within each 15 minute interval then served from the Attain platform to the edge. Commands are then routed to applicable control devices</p></li>
               </ul>
