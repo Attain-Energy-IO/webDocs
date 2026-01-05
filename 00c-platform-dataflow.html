@@ -51,24 +51,24 @@
               <ul class="n0-ul n0-border n0-white n0-round-large">
                 <li><h6><b>Site telemetry data object | SITE (gateway) PUSH > PLATFORM | 15 minute intervals</b></h6></li>
                 <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignA)"></pre></li>
-                <li><p>All device metadata and relations are stored as server side device attributes</p></li>
+                <li>All device metadata and relations are stored as server side device attributes</li>
               </ul>
             <br>
               <ul class="n0-ul n0-border n0-white n0-round-large">
                 <li><h6><b>Attain trim (commands) data object | SITE (gateway) FETCH > PLATFORM > (gateway) SITE | 15 minute intervals</b></h6></li>
                 <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignB)"></pre></li>
-                <li><p>Device commands are aggregated within each 15 minute interval then served from the Attain platform to the edge. Commands are then routed to applicable control devices</p></li>
+                <li>Device commands are aggregated within each 15 minute interval then served from the Attain platform to the edge. Commands are then routed to applicable control devices</li>
               </ul>
             <br>
               <ul class="n0-ul n0-border n0-white n0-round-large">
                 <li><h6><b>Attain fast updates (User engagement App commands) data object | SITE (gateway) FETCH > PLATFORM > (gateway) SITE | 1 minute interval</b></h6></li>
                 <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignC)"></pre></li>
-                <li><p>Device commands are aggregated within each 1 minute interval then served from the Attain platform to the edge. Commands are then routed to applicable control devices</p></li>
+                <li>Device commands are aggregated within each 1 minute interval then served from the Attain platform to the edge. Commands are then routed to applicable control devices</li>
               </ul>
             <br>
               <ul class="n0-ul n0-border n0-white n0-round-large">
                 <li><h6><b>Data from third party web services and pre-enabled buildings | Attain Virtual Gateway > FETCH > Web Service > Attain Virtual Gateway > PUSH > PLATFORM | 15 minute intervals</b></h6></li>
-                <li><p>Data polling interval to be set depending on data requirements. Attain virtual gateway to map device names and telemetry key names to Attain standard before transporting data to platform</p></li>
+                <li>Data polling interval to be set depending on data requirements. Attain virtual gateway to map device names and telemetry key names to Attain standard before transporting data to platform</li>
               </ul>
             </div>
             
