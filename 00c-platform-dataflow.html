@@ -40,12 +40,13 @@
                 
               <ul class="n0-ul n0-border n0-white n0-round-large">
                 <li><h6><b>Enablement notes for site systems configuration</b></h6></li>
-                <li>Platform connectivity heartbeat to be used for any local fallback control functions</li>
-                <li>Equipment with operatingMode telemetry, to be mapped to prescrobed numeric value for all possible equipment modes i.e. 0=OFF,1=AUTO,2=HEAT,3=COOL,4=FAN</li>
+                <li>Platform connectivity heartbeat to be used for any local fallback control functions i.e. local time scheduling</li>
+                <li>Equipment with operatingMode telemetry, to be mapped to prescrobed numeric value for all possible equipment modes</li>
                 <li>Suitable equipment to have writable operatingMode. Local control logic will handle setting equipment to required mode</li>
                 <li>Equipment to have writable primary control setpoint. Setpoint types are temperature, flow, speed, capacity, etc. Last knock scheme is preferred such that most recent setting takes precendence</li>
                 <li>Equipment to have time scheduling capability. This should include daily start/stop times and temporary override on/off settings. Fallback time schedule should operate during connectivity interruption</li>
-                <li>Floors or Tenants shall have writable floor settings</li>
+                <li>Main areas or Tenants shall have writable area settings including occupancy time schedule, temperature mode, temperature setpoint</li>
+                <li>Energy related equipment outputs (continuous/analog) to have writable maximum output value</li>
               </ul>
             <br>
               <ul class="n0-ul n0-border n0-white n0-round-large">
