@@ -93,24 +93,6 @@ const app = Vue.createApp({
         this.getPlatformData();
     },
 
-    computed() {
-
-        filteredPointsListA() {
-          if (!this.searchQuery) {
-            return this.pointsListA
-          }
-    
-          const q = this.searchQuery.toLowerCase()
-    
-          return this.pointsListA.filter(point =>
-            Object.values(point).some(value =>
-              String(value).toLowerCase().includes(q)
-            )
-          )
-        }
-        
-    },
-
     methods: {
         toggleSidebar() {
             this.sidebarVisible = !this.sidebarVisible;
@@ -118,6 +100,16 @@ const app = Vue.createApp({
         closeSidebar() {
             this.sidebarVisible = false;
         },
+
+        filteredPoints() {
+            if (!this.searchQuery) return this.pointsListA;
+            const q = this.searchQuery.toLowerCase();
+            return this.pointsListA.filter(point =>
+              Object.values(point).some(value =>
+                String(value).toLowerCase().includes(q)
+              )
+            );
+          },
         
         getPlatformData() { 
             const url = 'https://red.attain-energy.io/getPlatformData';
