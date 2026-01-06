@@ -75,7 +75,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(point, index) in filteredPointsListA" :key="index">
+                        <tr v-for="(point, index) in filteredPoints()" :key="index">
                             <td v-for="(value, key) in point" :key="key">{{ value }}</td>
                         </tr>
                     </tbody>
