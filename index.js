@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
+            searchQuery: "",
             sidebarVisible: false,
             dataObject: "",
             assetsData: {},
@@ -90,6 +91,24 @@ const app = Vue.createApp({
 
     mounted() {
         this.getPlatformData();
+    },
+
+    computed() {
+
+        filteredPointsListA() {
+          if (!this.searchQuery) {
+            return this.pointsListA
+          }
+    
+          const q = this.searchQuery.toLowerCase()
+    
+          return this.pointsListA.filter(point =>
+            Object.values(point).some(value =>
+              String(value).toLowerCase().includes(q)
+            )
+          )
+        }
+        
     },
 
     methods: {
