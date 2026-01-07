@@ -43,8 +43,10 @@
                       <ol>
                         <li>Authenticate your user and obtain access token here : https://&lt;host&gt;/api/auth/login , and periodically refresh the token here : https://&lt;host&gt;/api/auth/token , All subsequent requests will require Bearer token in request header</li>
                         <li>Fetch project details. Each site is represented as SITE_NAME PROJECT_ABCD, where ABCD is a unique project reference : https://&lt;host&gt;/api/customers?pageSize=100&page=0</li>
-                        <li>Fetch project devices (MEP devices) detail : https://&lt;host&gt;/api/customer/&lt;project ID&gt;/devices?pageSize=500&page=0 , Save the device ID for the device(s) you wish to access</li>
-                        <li>Fetch project assets (building/floors) detail : https://&lt;host&gt;/api/customer/&lt;project ID&gt;/assets?pageSize=50&page=0 , Save the asset ID for the asset(s) you wish to access</li>
+                        <li>For white labelled users, use data[n].name for site name, use data[n].additionalInfo.description for customerName_siteName</li>
+                        <li>Save the required customer ID from data[n].id.id</li>
+                        <li>Fetch project devices (MEP devices) detail : https://&lt;host&gt;/api/customer/&lt;customer ID&gt;/devices?pageSize=500&page=0 , Save the device ID for the device(s) you wish to access</li>
+                        <li>Fetch project assets (building/floors) detail : https://&lt;host&gt;/api/customer/&lt;customer ID&gt;/assets?pageSize=50&page=0 , Save the asset ID for the asset(s) you wish to access</li>
                       </ol>
                       <p><b>Device Quick Data Access</b></p>
                       <ul>
