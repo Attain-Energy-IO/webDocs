@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+    <title>Smart Building Toolkit</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://example.com/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./index.js" defer></script>
+
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+
+</head>
+
+<body class="n0-light-grey">
+
+    <div>
+
+        <!-- !PAGE CONTENT! -->
+        <div class="n0-main">
+
+            <div class="n0-container n0-padding-16">            
+                <h3><b>Attain Project Onboarding</b></h3>
+                  <h5>Management API - Quick Access</h5>
+                    <div class="n0-panel n0-white n0-border n0-round-large">
+                      <p><b>Client Authentication</b></p>
+                      <ol>
+                        <li>Authenticate your user and obtain access token here : https://&lt;host&gt;/api/auth/login , and periodically refresh the token here : https://&lt;host&gt;/api/auth/token , All subsequent requests will require Bearer token in request header</li>
+                        <li>Fetch project details. Each site is represented as SITE_NAME PROJECT_ABCD, where ABCD is a unique project reference : https://&lt;host&gt;/api/customers?pageSize=100&page=0</li>
+                      </ol>
+                      <p><b>Device Quick Data Access</b></p>
+                      <ul>
+                        <li>Device Timeseries Keys - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/DEVICE/&lt;device ID&gt;/keys/timeseries</li>
+                        <li>Device Semi-Static Keys - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/DEVICE/&lt;device ID&gt;/keys/attributes</li>
+                      </ul>  
+                      <p><b>Asset Quick Data Access</b></p>
+                      <ul>
+                        <li>Asset Timeseries Keys - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/keys/timeseries</li>
+                        <li>Asset Semi-Static Keys - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/keys/attributes</li>  
+                      </ul>  
+                    </div>
+            </div>
+            
+            <br>
+                <a href="./00a-platform-index.html" class="n0-button n0-black n0-round-large n0-hover-indigo">Docs Menu</a>
+            </div>
+
+    <!-- End page content -->
+    </div>
+
+</body>
+</html>
