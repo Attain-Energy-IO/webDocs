@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Smart Building Toolkit</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://example.com/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./index.js" defer></script>
+
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+
+</head>
+
+<body class="n0-light-grey">
+
+    <div id="smartBldgDesign">
+
+        <!-- !PAGE CONTENT! -->
+        <div class="n0-main">
+
+            <div class="n0-container">
+              <p>This guide specifies how data is transferred between sites and the Attain platform. The platform uses simplified data structures to enable efficient & extensible data transmission</p>
+                
+              <ul class="n0-ul n0-border n0-white n0-round-large">
+                <li><h6><b>Enablement notes for site systems configuration</b></h6></li>
+                <li>Platform connectivity heartbeat to be used for any local fallback control functions i.e. local time scheduling</li>
+                <li>Equipment with operatingMode telemetry, to be mapped to prescribed numeric value for all possible equipment modes</li>
+                <li>Suitable equipment to have writable operatingMode. Local control logic will handle setting equipment to required mode</li>
+                <li>Equipment to have writable primary control setpoint. Setpoint types are temperature, flow, speed, capacity, etc. Last knock scheme is preferred such that most recent setting takes precendence</li>
+                <li>Equipment to have time scheduling capability. This should include daily start/stop times and temporary override on/off settings. Fallback time schedule should operate during connectivity interruption</li>
+                <li>Main areas or Tenants shall have writable area settings including occupancy time schedule, temperature mode, temperature setpoint</li>
+                <li>Energy related equipment outputs (continuous/analog) to have writable maximum output value</li>
+              </ul>
+            <br>
+              <ul class="n0-ul n0-border n0-white n0-round-large">
+                <li><h6><b>Site telemetry data object | SITE (gateway) PUSH > PLATFORM | 15 minute intervals</b></h6></li>
+                <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignA)"></pre></li>
+                <li>All device metadata and relations are stored as server side device attributes</li>
+              </ul>
+            <br>
+              <ul class="n0-ul n0-border n0-white n0-round-large">
+                <li><h6><b>Attain trim (commands) data object | SITE (gateway) FETCH > PLATFORM > (gateway) SITE | 15 minute intervals</b></h6></li>
+                <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignB)"></pre></li>
+                <li>Device commands are aggregated within each 15 minute interval then served from the Attain platform to the edge. Commands are then routed to applicable control devices</li>
+              </ul>
+            <br>
+              <ul class="n0-ul n0-border n0-white n0-round-large">
+                <li><h6><b>Attain fast updates (User engagement App commands) data object | SITE (gateway) FETCH > PLATFORM > (gateway) SITE | 1 minute interval</b></h6></li>
+                <li><pre class="n0-code n0-small" v-html="syntaxHighlight(dataDesignC)"></pre></li>
+                <li>Device commands are aggregated within each 1 minute interval then served from the Attain platform to the edge. Commands are then routed to applicable control devices</li>
+              </ul>
+            <br>
+              <ul class="n0-ul n0-border n0-white n0-round-large">
+                <li><h6><b>Data from third party web services and pre-enabled buildings | Attain Virtual Gateway > FETCH > Web Service > Attain Virtual Gateway > PUSH > PLATFORM | 15 minute intervals</b></h6></li>
+                <li>Data polling interval to be set depending on data requirements. Attain virtual gateway to map device names and telemetry key names to Attain standard before transporting data to platform</li>
+              </ul>
+            </div>
+      
+            </div>
+
+    <!-- End page content -->
+    </div>
+
+</body>
+</html>
