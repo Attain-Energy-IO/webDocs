@@ -185,18 +185,6 @@ const app = Vue.createApp({
             const x = this.selectA;
             this.listB = [];
             this.equipmentReference = "";
-            //const url = `https://red.attain-energy.io/getDevicesData?sys=${x}`;
-            //fetch(url).then(res => {
-                //if (res.status === 200) {
-                    //res.json().then(data => {
-                        //console.log(data);
-                        //this.dataObject = data;
-                        //for (let i = 0; i < data[0].length; i++) {
-                            //this.listB.push(data[0][i][0]);
-                        //}
-                    //});
-                //}
-            //});
             let selected = "";
             if (x == "HVAC-A") { selected = "ATTAIN_HVAC" }
             if (x == "Metering") { selected = "ATTAIN_METERS" }
@@ -241,15 +229,6 @@ const app = Vue.createApp({
             }
             const z = this.item;
             console.log(z);
-            //const url = `https://red.attain-energy.io/getDeviceConfig?item=${z}`;
-            //fetch(url).then(res => {
-                //if (res.status === 200) {
-                    //res.json().then(data => {
-                        //console.log(data);
-                        //this.deviceDataT = data
-                    //});
-                //}
-            //});
             let refData = this.pointsListB;
             let item = z.split('_')[0];
             for (let device in refData) {
