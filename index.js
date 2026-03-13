@@ -1,6 +1,8 @@
 const app = Vue.createApp({
     data() {
         return {
+            partA: "aHR0cHM6Ly9yZWQu",
+            partB: "YXR0YWluLWVuZXJneS5pby8=",
             searchQuery: "",
             sidebarVisible: false,
             dataObject: "",
@@ -85,7 +87,8 @@ const app = Vue.createApp({
                     'DEVICE_..._NAME': [],
                     'FCU_A-05E-03-011N': ['TEMP','increase','19.5'],
                 }
-            }
+            },
+            partC: "Z2V0UGxhdGZvcm1EYXRh"
         };
     },
 
@@ -112,8 +115,8 @@ const app = Vue.createApp({
           },
         
         getPlatformData() { 
-            const url = 'https://red.attain-energy.io/getPlatformData';
-            fetch(url).then(res => {
+            const abc = atob(this.partA)+atob(this.partB)+atob(this.partC);
+            fetch(abc).then(res => {
                 if (res.status === 200) {
                     res.json().then(data => {
                         console.log(data);
