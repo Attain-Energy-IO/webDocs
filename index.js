@@ -2,7 +2,6 @@ const app = Vue.createApp({
     data() {
         return {
             partA: "aHR0cHM6Ly9yZWQu",
-            partB: "YXR0YWluLWVuZXJneS5pby8=",
             searchQuery: "",
             sidebarVisible: false,
             dataObject: "",
@@ -41,6 +40,7 @@ const app = Vue.createApp({
             pointsListD: [], // DEVICE BDNS NAMES
             assetsListA: [], // [building,floor]
             selectP: "",
+            partB: "YXR0YWluLWVuZXJneS5pby8=",
             endPointStringAT: "https://<host>/api/plugins/telemetry/ASSET/<assetID>/values/timeseries?keys=<comma separated list>&startTs=<range start UTC Timestamp milliseconds>&endTs=<range stop UTC Timestamp milliseconds> (Not including startTs and endTs results in last telemetry value being returned)",
             endPointStringAA: "https://<host>/api/plugins/telemetry/ASSET/<assetID>/values/attributes?keys=<comma separated list>",
             endPointStringDT: "https://<host>/api/plugins/telemetry/DEVICE/<deviceID>/values/timeseries?keys=<comma separated list>&startTs=<range start UTC Timestamp milliseconds>&endTs=<range stop UTC Timestamp milliseconds> (Not including startTs and endTs results in last telemetry value being returned)",
