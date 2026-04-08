@@ -38,6 +38,8 @@
             <div class="n0-container n0-padding-16 n0-border">
                 <h3><b>MEP devices - Naming schema checker</b></h3>
                 <div class="n0-row-padding-small">
+                    <p>Note: Parent system categories:- Heating / Cooling / Packaged AC / Critical cooling / Ventilation / Domestic services / Small power / Lighting / ICT / Vertical transport / Catering / Onsite generation / Primary electricity / Primary gas / Primary water / Security / Workspace / Smart</p>
+                    <p>Use the dropdowns below to find the specific MEP device:</p>
                     <div class="n0-half n0-padding">
                         <select v-model="selectA" v-on:change="setSystem()" class="n0-select" name="option">
                         <option value="" disabled selected>Select Category</option>
@@ -59,9 +61,10 @@
             </div>
 
             <div class="n0-container n0-padding-16 n0-border">
-            <h3><b>MEP devices - Timeseries data key names</b></h3>
+            <h4><b>MEP devices - Timeseries data key names</b></h4>
                 <input
                   class="n0-input n0-border n0-margin-bottom"
+                  style="width:27%;"
                   type="text"
                   placeholder="Search…"
                   v-model="searchQuery"
