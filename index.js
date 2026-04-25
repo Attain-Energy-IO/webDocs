@@ -99,7 +99,7 @@ const app = Vue.createApp({
         this.getPlatformData();
     },
 
-    computed() {
+    computed: {
         filteredEndpoints() {
             const result = {};
             const search = this.search.toLowerCase();
@@ -109,6 +109,7 @@ const app = Vue.createApp({
                     ep.description.toLowerCase().includes(search) ||
                     ep.method.toLowerCase().includes(search)
                 );
+    
                 if (filtered.length) {
                     result[group] = filtered;
                 }
