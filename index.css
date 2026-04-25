@@ -1783,3 +1783,39 @@ a {
 .json-array li {
     margin-bottom: 5px;
 }
+
+/* Endpoint styling */
+.endpoint-path {
+  font-family: Consolas, monospace;
+  display: block;
+  margin-top: 6px;
+  word-break: break-all;
+}
+
+/* Method tags */
+.method-tag {
+  margin-right: 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* Method colors (match Swagger feel but your palette) */
+.method-tag.GET {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.method-tag.POST {
+  background-color: #2196F3;
+  color: white;
+}
+
+.method-tag.PUT {
+  background-color: #ff9800;
+  color: white;
+}
+
+.method-tag.DELETE {
+  background-color: #f44336;
+  color: white;
+}
