@@ -97,9 +97,6 @@ const app = Vue.createApp({
 
     mounted() {
         this.getPlatformData();
-        for (const group in this.endPSwag) {
-            this.openGroups[group] = true;
-        }
     },
 
     computed() {
@@ -152,6 +149,9 @@ const app = Vue.createApp({
                         this.endPSwag = data.f;
                         for (let assetType in data.e) {
                             this.assetsListA.push(assetType);
+                        }
+                        for (const group in this.endPSwag) {
+                            this.openGroups[group] = true;
                         }
                     });
                 }
