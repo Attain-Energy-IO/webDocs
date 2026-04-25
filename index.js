@@ -1,6 +1,8 @@
 const app = Vue.createApp({
     data() {
         return {
+            search: "",
+            openGroups: {},
             endPSwag: {},
             partA: "aHR0cHM6Ly9yZWQu",
             searchQuery: "",
@@ -95,6 +97,27 @@ const app = Vue.createApp({
 
     mounted() {
         this.getPlatformData();
+        for (const group in this.endPSwag) {
+            this.openGroups[group] = true;
+        }
+    },
+
+    computed() {
+        filteredEndpoints() {
+            const result = {};
+            const search = this.search.toLowerCase();
+            for (const group in this.endPSwag) {
+                const filtered = this.endPSwag[group].filter(ep =>
+                    ep.path.toLowerCase().includes(search) ||
+                    ep.description.toLowerCase().includes(search) ||
+                    ep.method.toLowerCase().includes(search)
+                );
+                if (filtered.length) {
+                    result[group] = filtered;
+                }
+            }
+            return result;
+        }
     },
 
     methods: {
@@ -258,7 +281,26 @@ const app = Vue.createApp({
             const inst = "NNNN-";
             const proj = "ABCD";
             this.equipmentReference = "Equipment Name : " + type + "-" + floor + inst + proj + " , where FFF is a floor number or zone reference, and NNNN is a unique equipment instance/reference for that floor, and ABCD is the unique Attain project reference";
+        },
+
+        toggleGroup(group) {
+            this.openGroups[group] = !this.openGroups[group];
+        },
+
+        methodClass(method) {
+            switch (method) {
+                case 'GET': return 'n0-green';
+                case 'POST': return 'n0-blue';
+                case 'PUT': return 'n0-orange';
+                case 'DELETE': return 'n0-red';
+                default: return 'n0-grey';
+            }
+        },
+
+        copy(text) {
+            navigator.clipboard.writeText(text);
         }
+    
     }
 });
 
