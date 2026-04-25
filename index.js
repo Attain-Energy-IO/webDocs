@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
+            endPSwag: {},
             partA: "aHR0cHM6Ly9yZWQu",
             searchQuery: "",
             sidebarVisible: false,
@@ -125,6 +126,7 @@ const app = Vue.createApp({
                         this.pointsListC = data.c;
                         this.pointsListD = data.d;
                         this.assetsData = data.e;
+                        this.endPSwag = data.f;
                         for (let assetType in data.e) {
                             this.assetsListA.push(assetType);
                         }
