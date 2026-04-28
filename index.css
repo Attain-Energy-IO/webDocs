@@ -1819,9 +1819,3 @@ a {
   background-color: #f44336;
   color: white;
 }
-
-.header-img {
-    float: right;
-    height: 80px; /* adjust */
-    margin-left: 15px;
-}
