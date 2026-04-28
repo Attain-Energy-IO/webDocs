@@ -1819,3 +1819,22 @@ a {
   background-color: #f44336;
   color: white;
 }
+
+.page-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-image {
+    width: 120px;   /* adjust */
+    height: auto;
+    margin-left: auto;   /* pushes image fully right */
+}
