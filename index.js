@@ -286,7 +286,7 @@ const app = Vue.createApp({
         },
 
         toggleGroup(group) {
-            this.openGroups[group] = !this.openGroups[group];
+            this.openGroups[group] = !(this.openGroups[group] === true);
         },
 
         toggleAll() {
