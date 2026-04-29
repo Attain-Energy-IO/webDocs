@@ -4,6 +4,7 @@ const app = Vue.createApp({
             search: "",
             openGroups: {},
             endPSwag: {},
+            allOpen: false,
             partA: "aHR0cHM6Ly9yZWQu",
             searchQuery: "",
             sidebarVisible: false,
@@ -286,6 +287,13 @@ const app = Vue.createApp({
 
         toggleGroup(group) {
             this.openGroups[group] = !this.openGroups[group];
+        },
+
+        toggleAll() {
+            this.allOpen = !this.allOpen;
+            for (const group in this.filteredEndpoints) {
+              this.openGroups[group] = this.allOpen;
+            }
         },
 
         methodClass(method) {
