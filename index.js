@@ -152,9 +152,6 @@ const app = Vue.createApp({
                         for (let assetType in data.e) {
                             this.assetsListA.push(assetType);
                         }
-                        for (const group in this.endPSwag) {
-                            this.openGroups[group] = true;
-                        }
                     });
                 }
             });
