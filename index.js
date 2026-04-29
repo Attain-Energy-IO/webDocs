@@ -291,9 +291,9 @@ const app = Vue.createApp({
 
         toggleAll() {
             this.allOpen = !this.allOpen;
-            for (const group in this.filteredEndpoints) {
-              this.openGroups[group] = this.allOpen;
-            }
+              Object.keys(this.filteredEndpoints).forEach(group => {
+                this.openGroups[group] = this.allOpen;
+              });
         },
 
         methodClass(method) {
