@@ -36,7 +36,14 @@
         <div class="n0-main">
 
             <div class="n0-container n0-padding-16">
-                <h3><b>Asset Information</b></h3>
+                <div class="n0-row">
+                    <div class="n0-half">
+                        <h3><b>Asset Information</b></h3>
+                    </div>
+                    <div class="n0-half n0-right-align">
+                        <a href="./platform-index.html" class="n0-button n0-black n0-round-large n0-hover-indigo"><i class="fa fa-arrow-left"></i> Docs Menu</a>
+                    </div>
+                </div>
                 <div class="n0-row">
                     <div class="n0-third n0-padding">
                         <select v-model="selectP" v-on:change="getAssetEndpoint()" class="n0-select" name="option">
