@@ -66,12 +66,25 @@
                 <hr>
                 
                 <h5>Management API - Full Documentation</h5>
-                <!-- Search -->
-                <input 
-                    class="n0-input n0-border n0-round-large n0-margin-bottom"
-                    placeholder="Search endpoints..."
-                    v-model="search"
-                />
+                
+                <div class="n0-row n0-margin-bottom">
+                    <div class="n0-col s9">
+                        <input 
+                            class="n0-input n0-border n0-round-large"
+                            placeholder="Search endpoints..."
+                            v-model="search"
+                        />
+                    </div>
+                    <div class="n0-col s3 n0-right-align">
+                        <button 
+                            class="n0-button n0-indigo n0-round-large"
+                            @click="toggleAll"
+                        >
+                            <i class="fa" :class="allOpen ? 'fa-compress' : 'fa-expand'"></i>
+                            {{ allOpen ? 'Collapse All' : 'Expand All' }}
+                        </button>
+                    </div>
+                </div>
             
                 <!-- Groups -->
                 <div v-for="(endpoints, group) in filteredEndpoints" :key="group" class="n0-margin-bottom">
