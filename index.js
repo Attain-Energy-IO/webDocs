@@ -5,7 +5,7 @@ const app = Vue.createApp({
             openGroups: {},
             endPSwag: {},
             allOpen: false,
-            partA: "aHR0cHM6Ly9yZWQu",
+            partA: "aHR0cHM6Ly9ncmVlbi4=",
             searchQuery: "",
             sidebarVisible: false,
             dataObject: "",
