@@ -54,16 +54,14 @@
                       <p><b>Data Out (From system to 3rd party)</b></p>
                       <ul>
                         <li>BACnet export table created with all required niagara proxy points, apply numbering system i.e. FCU_A-02-0010 = AI2001001,02,03,etc</li>
-                        <li>Niagara HTTPClientDriver AND JSON payloads OR Report service file</li>
+                        <li>Niagara HTTPClientDriver AND JSON payloads OR Report service file (CSV,TXT)</li>
                         <li>Any secure MQTT driver and JSON payloads</li>
                         <li>Haystack web service</li>
                       </ul>  
                       <p><b>Data In (From 3rd party to system)</b></p>
                       <ul>
-                        <li>Asset Timeseries Keys - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/keys/timeseries</li>
-                        <li>Asset Semi-Static Keys - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/keys/attributes</li>  
-                        <li>Asset Timeseries Point Data - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/values/timeseries?keys=&lt;comma separated keys&gt;&startTs=&lt;range start UTC Timestamp milliseconds&gt;&endTs=&lt;range stop UTC Timestamp milliseconds&gt; (Not including startTs and endTs results in last telemetry value being returned)</li>
-                        <li>Asset Semi-Static Point Data - Endpoint : https://&lt;host&gt;/api/plugins/telemetry/ASSET/&lt;asset ID&gt;/values/attributes?keys=&lt;comma separated keys&gt;</li>
+                        <li>BACnet export table (as above) with writable points</li>
+                        <li>HTTP / MQTT</li>  
                       </ul>  
                     </div>
 
