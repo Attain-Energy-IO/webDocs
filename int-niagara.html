@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Smart Building Toolkit</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://example.com/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./index.js" defer></script>
+
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+
+</head>
+
+<body class="n0-light-grey">
+
+    <div id="smartBldgDesign">
+
+        <!-- !PAGE CONTENT! -->
+        <div class="n0-main">
+
+            <div class="n0-container n0-padding-16">            
+                <div class="n0-row">
+                    <div class="n0-half">
+                        <h4><b><u>Attain Site Integration - Niagara framework</u></b></h4>
+                    </div>
+                </div>
+                
+                    <div class="n0-panel n0-white n0-border n0-round-large">
+                      <p><b>Integration Overview</b></p>
+                      <ol>
+                        <li>The Attain platform offers flexible integration with Niagara systems including any mixture of JACE and Supervisor stations</li>
+                        <li>Preferred transport protocols are HTTP(S), MQTT(S) and BACnet</li>
+                        <li>Main consideration should be ensuring all points are realtime/live values</li>
+                      </ol>
+                      <p><b>Data Out (From system to 3rd party)</b></p>
+                      <ul>
+                        <li>BACnet export table created with all required niagara proxy points, apply numbering system i.e. FCU_A-02-0010 = AI2001001,02,03,etc</li>
+                        <li>Niagara HTTPClientDriver AND JSON payloads OR Report service file (CSV,TXT)</li>
+                        <li>Any secure MQTT driver and JSON payloads</li>
+                        <li>Haystack web service</li>
+                      </ul>  
+                      <p><b>Data In (From 3rd party to system)</b></p>
+                      <ul>
+                        <li>BACnet export table (as above) with writable points</li>
+                        <li>HTTP / MQTT</li>  
+                      </ul>  
+                    </div>
+
+                    <div class="n0-row"><!-- !ROW 1 START! -->
+                        <div class="n0-half n0-padding">
+                          <img src="https://i.ibb.co/1YDkCG4X/Screenshot-2026-08-06-172226.png" border="0" width="100%" />
+                        </div>
+                        <div class="n0-half n0-padding">
+                          <img src="https://i.ibb.co/hFXZ5Yv0/Screenshot.png" border="0" width="100%" />
+                        </div>
+                    </div><!-- !ROW 1 END! -->
+                
+            </div><!--container-->
+            </div>
+
+    <!-- End page content -->
+    </div>
+
+</body>
+</html>
